@@ -28,20 +28,21 @@ func cleanup(drive string) error {
 
 	bar := progressbar.Default(5000, "Cleaning")
 
+	depth := 0
 	for i := 1; i <= 5000; i++ {
 		if err := os.Chdir(strconv.Itoa(i)); err != nil {
 			break
 		}
+		depth = i
 	}
 
-	for {
-		current, _ := os.Getwd()
-		if current == base || current == drive || current == drive+"\\" {
-			break
+	for i := depth; i >= 1; i-- {
+		if err := os.Chdir(".."); err != nil {
+			return err
 		}
-
-		os.Chdir("..")
-		os.RemoveAll(current)
+		if err := os.Remove(strconv.Itoa(i)); err != nil {
+			return err
+		}
 		bar.Add(1)
 	}
 
