@@ -189,6 +189,12 @@ func main() {
 			break
 		}
 
+		// stdin closed: bail out instead of looping forever
+		if err == io.EOF || err == io.ErrUnexpectedEOF {
+			fmt.Fprintln(os.Stderr, "\nstdin closed; aborting.")
+			os.Exit(1)
+		}
+
 		fmt.Println("Invalid Choice! Please Try Again.")
 	}
 
