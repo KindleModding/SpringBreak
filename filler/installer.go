@@ -189,9 +189,9 @@ func main() {
 			break
 		}
 
-		// stdin closed: bail out instead of looping forever
+		//Prevent Linux Ghost Process
 		if err == io.EOF || err == io.ErrUnexpectedEOF {
-			fmt.Fprintln(os.Stderr, "\nstdin closed; aborting.")
+			fmt.Fprintln(os.Stderr, "\nStdin Closed; Aborting.")
 			os.Exit(1)
 		}
 
