@@ -5,6 +5,8 @@
 
 SpringBreak is a jailbreak for KT5, PW5(SE) on 5.19.2+, KT4/PW4 5.18.1.1.1.
 
+Read the write-up [here](https://penguins184.xyz/blog/springbreak-jailbreak/).
+
 ## How It Works
 
 1. Load modified store cache with upwards of 5-10 thousand nested folders to prevent cache deletion upon eject.
